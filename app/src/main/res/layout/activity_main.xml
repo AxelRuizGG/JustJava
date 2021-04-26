@@ -1,0 +1,125 @@
+<!--Sirve para poder scrollear en la vista-->
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!--Declaracion de la interfaz principal como su orientacion  -->
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="10dp"
+        android:orientation="vertical">
+
+        <!--Se agrega un editTExt para agregar uestro nombre-->
+        <EditText
+            android:id="@+id/name_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Name"
+            android:inputType="textCapWords"/>
+
+        <!--TextView para mostrar la palabra toppings-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Toppings"
+            android:textAllCaps="true" />
+
+        <!--CheckBox para verificar si el cliente quiere crema batida o no -->
+        <CheckBox
+            android:id="@+id/whipped_cream_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="24dp"
+            android:textSize="16sp"
+            android:text="whipped cream"
+            />
+
+        <!--CheckBox para verificar si el cliente quiere chocolate o no -->
+        <CheckBox
+            android:id="@+id/chocolate_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="24dp"
+            android:textSize="16sp"
+            android:text="Chocolate"
+            />
+
+        <!--TextView que muestra la palabra Quantity-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quantity"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:textAllCaps="true"
+            />
+
+        <!--LinearLayout para acomodar los votones de manera horizontal-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!--Boton para aumentar la cantidad de cafes que se quieren comprar-->
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="+"
+                android:onClick="increment"
+                />
+
+            <!--TextView que muestra la cantidad de cafes elejidos en tiempo real (al oprimir los botones)-->
+            <TextView
+                android:id="@+id/quantity_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="0"/>
+
+            <!--Boton para reducir la cantidad de cafes que se quieren comprar-->
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="-"
+                android:onClick="decrement" />
+        </LinearLayout>
+
+        <!--TExtView que muestra las palabras Order Summary-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Order Summary"
+            android:textSize="16sp"
+            android:textAllCaps="true"
+            />
+
+        <!--TExtView que muestra lo que se ordeno-->
+        <TextView
+            android:id="@+id/order_summary_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:text="$0"/>
+
+        <!--Boton pra ordenar-->
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:onClick="submitOrder"
+            android:backgroundTint="@color/material_on_surface_stroke"
+            android:text="Order"/>
+    </LinearLayout>
+</ScrollView>
